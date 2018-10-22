@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>x</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+    <script>
+      require.config({
+        baseUrl: './'
+      });
+      require(['ModelAMD.js','ViewDOMAMD.js','ViewSVGAMD.js','ControllerAMD.js'], function(ModelAMD,ViewDOMAMD,ViewSVGAMD,ControllerAMD) {
+        
+        const model1 = new ModelAMD.Model(-5);
+        const view1 = new ViewDOMAMD.ViewDOM(document.body);
+        new ControllerAMD.Controller(model1, view1);
+
+        const model2 = new ModelAMD.Model(0);
+        const view2 = new ViewDOMAMD.ViewDOM(document.body);
+        new ControllerAMD.Controller(model2, view2);
+        
+        const model3 = new ModelAMD.Model(1);
+        const view3 = new ViewDOMAMD.ViewDOM(document.body);
+        new ControllerAMD.Controller(model3, view3);
+
+        
+        const model4 = new ModelAMD.Model(3);
+        const view4 = new ViewSVGAMD.ViewSVG(document.body);
+        new ControllerAMD.Controller(model4, view4);
+
+        const model5 = new ModelAMD.Model(9);
+        const view5 = new ViewSVGAMD.ViewSVG(document.body);
+        new ControllerAMD.Controller(model5, view5);
+        
+        const model6 = new ModelAMD.Model(10);
+        const view6 = new ViewSVGAMD.ViewSVG(document.body);
+        new ControllerAMD.Controller(model6, view6);
+      });
+    </script>
+</body>
+</html>
